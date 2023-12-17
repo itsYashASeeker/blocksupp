@@ -1,0 +1,3 @@
+client id: b8979a28e29fe59f054aa54018afba69
+
+secret key: AtwlIYxEE0Hr2KqMoeEYlvoThYVc6gxBQ8JUHv8zoiGwEmMpxJDBR9Xrg997eE3bfBpKGolKriXzKzTztxM2jw
