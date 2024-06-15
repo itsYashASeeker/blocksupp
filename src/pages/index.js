@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import { NcheckIfOwner } from "@/lib/features/blocksupp/blockSlice";
 import { fetchF1 } from "@/lib/actions/fetchOwner";
 import Navbar from "@/components/Navbar";
+import { bgcolorHex } from "@/constants/colors";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -91,12 +92,18 @@ export default function Home() {
 
   return (
     <>
-      <div className="font-mono bg-slate-100 w-full h-full min-h-screen">
+      <div className="relative font-mono w-full h-full"
+        style={{ background: bgcolorHex(), paddingTop: "4.5rem" }}
+      >
         <Navbar />
         {/* <div className=" w-full h-full">
           <p className="text">Hello</p>
           <p>{isAdmin ? "Admin Sir" : "User Sir"}</p>
         </div> */}
+        <div className="w-full h-fit"
+          style={{ minHeight: "calc(100vh - 4.5rem)", background: bgcolorHex() }}
+        >
+        </div>
 
       </div>
     </>
