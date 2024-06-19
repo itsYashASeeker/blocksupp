@@ -78,21 +78,22 @@ export default function Navbar() {
     }, [supplyContractAddress])
 
     return (
-        <div className="fixed top-1 flex justify-center items-center w-full">
-            <div className="bg-orange-50 overflow-hidden flex justify-between items-center w-fit h-fit backdrop-blur text-white shadow-sm shadow-slate-600 rounded-3xl
-            border-2 border-solid border-slate-800
+        <div className="fixed top-1 flex justify-center items-center w-full z-10">
+            <div className=" overflow-hidden flex justify-between items-center w-fit h-fit backdrop-blur-3xl text-white shadow-sm shadow-slate-600 rounded-3xl
+            border-2 border-solid border-slate-800 transition ease-out transition-2
+            hover:shadow-slate-200
             "
                 // style={{ background: bgcolorHex() }}
                 style={{ background: "rgba(0,0,0,0.2)" }}
 
             >
-                <p className="text-lg px-4 py-4 font-semibold hover:bg-slate-950">BlockSupp</p>
-                <div className="w-0.5 h-12 bg-slate-700 rounded-full"></div>
+                <p className="text-lg px-4 py-2 font-semibold hover:bg-slate-950">BlockSupp</p>
+                <div className="w-0.5 h-8 bg-slate-700 rounded-full"></div>
                 <div className="flex items-center w-fit">
-                    <Link className="px-3 py-4  hover:bg-stone-950 hover:underline" href={"/"}>Buy-Fruits</Link>
-                    <Link className="px-3 py-4  hover:bg-stone-950 hover:underline" href={"/"}>Cart</Link>
+                    <Link className="px-3 py-2  hover:bg-stone-950 hover:underline" href={"/"}>Buy-Fruits</Link>
+                    <Link className="px-3 py-2  hover:bg-stone-950 hover:underline" href={"/"}>Cart</Link>
                 </div>
-                <div className="w-0.5 h-12 bg-slate-700 rounded-full"></div>
+                <div className="w-0.5 h-8 bg-slate-700 rounded-full"></div>
                 {account ?
                     <>
                         {/* <div
@@ -118,7 +119,7 @@ export default function Navbar() {
                             <div
                                 className="text-sm border-2 rounded border-dashed p-1 border-slate-500 hover:border-white"
                             >Connected: {account.slice(0, 6)}...</div>
-                            <button className="text-normal px-4 py-4 hover:bg-white hover:text-black" onClick={() => { router.push("/admin/dashboard") }}>Dashboard</button>
+                            <button className="text-normal px-4 py-2 hover:bg-white hover:text-black" onClick={() => { router.push("/admin/dashboard") }}>Dashboard</button>
                         </div>
                     </>
                     :
@@ -130,7 +131,7 @@ export default function Navbar() {
                             }
                         }}
                         disabled={isWeb3EnableLoading}
-                        className="text-normal px-4 py-4 hover:bg-slate-950"
+                        className="text-normal px-4 py-2 hover:bg-slate-950"
                     >Connect Wallet</button>
                 }
             </div>

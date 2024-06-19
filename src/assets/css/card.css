@@ -1,0 +1,86 @@
+:root {
+    --var-main-square: 20rem;
+    --var-main-square-number: 12rem;
+    --var-divider-length: 8rem;
+}
+
+
+.inCard {
+    display: none;
+    /* transition: 0.3s all;
+    transition-delay: 0.5s; */
+}
+
+
+.mainCard {
+    width: var(--var-main-square);
+    height: var(--var-main-square);
+}
+
+.horizDivSqaure {
+    width: var(--var-main-square-number);
+
+    /* height: var(--var-main-square); */
+}
+
+.mainCardNumber {
+    width: var(--var-main-square-number);
+    height: var(--var-main-square-number);
+    /* transition: 0.1s all cubic-bezier(0.165, 0.84, 0.44, 1); */
+    transition: 0.3s all ease-out;
+}
+
+
+.mainCardNumber:hover {
+    /* background: gray; */
+    transform: scale(1.05);
+    border-radius: 50%;
+    transition: 0.1s border-radius ease-out;
+    transition-delay: 0.3s;
+}
+
+
+.dividerCards {
+    width: 0.15rem;
+    height: var(--var-divider-length);
+    border-radius: 50%;
+    background: rgb(184, 184, 184);
+}
+
+.horizDividerCards {
+    width: var(--var-divider-length);
+    height: 0.2rem;
+    border-radius: 50%;
+    background: rgb(204, 204, 204);
+}
+
+.hoverCard {
+    display: flex;
+    animation: openCard 0.2s normal cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* animation-delay: 0.5s; */
+}
+
+@keyframes openCard {
+    0% {
+        display: none;
+        opacity: 0;
+        color: black;
+    }
+
+    1% {
+        display: flex;
+        opacity: 0;
+        transform: scale(20);
+    }
+
+    99% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        color: white;
+    }
+}

@@ -1,0 +1,8 @@
+body,
+.__next {
+    background: #1C1C1C;
+}
+
+.no-hover * {
+    pointer-events: none;
+}
