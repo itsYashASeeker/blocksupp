@@ -10,7 +10,8 @@ import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import { NcheckIfOwner } from "@/lib/features/blocksupp/blockSlice";
 import { fetchF1 } from "@/lib/actions/fetchOwner";
 import Navbar from "@/components/Navbar";
-import { bgcolorHex } from "@/constants/colors";
+import { colorsBG } from "@/constants/colors";
+// import { bgcolorHex } from "@/constants/colors";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -99,8 +100,8 @@ function UsableCard({ index, numc, tlength, scrollPosition, isScrolling }) {
         onMouseLeave={() => setInCardNumHover(false)}
 
       >
-        <div className="absolute top-1/2 left-1/2 bg-slate-600 rounded-xl  flex justify-center items-end mainCardNumber"
-          style={{ transform: "translate(-50%, -50%)" }}
+        <div className="absolute top-1/2 left-1/2 rounded-xl  flex justify-center items-end mainCardNumber"
+          style={{ transform: "translate(-50%, -50%)", background: colorsBG.secondary, boxShadow: `0 0 0.4rem 0.01rem ${colorsBG.neonTertiary}` }}
           onMouseEnter={() => { if (!isScrolling) setInCardNumHover(true) }}
         // onMouseLeave={() => setInCardNumHover(false)}
         >
@@ -115,7 +116,9 @@ function UsableCard({ index, numc, tlength, scrollPosition, isScrolling }) {
 
         <div className={`inCard ${inCardNumHover ? "hoverCard" : ""} flex justify-center items-center bg-transparent backdrop-blur-xl	rounded-lg overflow-hidden flex-col h-content border-2 solid border-slate-400  w-full h-full`}
         >
-          <div className=" text-left text-sm w-full p-1 bg-gray-700 p-2">
+          <div className=" text-left text-sm w-full p-1  p-2"
+            style={{ background: colorsBG.neonTertiary }}
+          >
             <p>Added by <span className="p-1 rounded bg-slate-800">HQ</span></p>
           </div>
           <div className="flex justify-center items-center text-2xl h-full"><p>Apple B1</p></div>
@@ -342,7 +345,7 @@ export default function Home() {
   return (
     <>
       <div className="relative font-mono w-full h-full"
-        style={{ background: bgcolorHex(), paddingTop: "4.5rem" }}
+        style={{ background: colorsBG.primary, paddingTop: "4.5rem" }}
       >
         <Navbar />
         {/* <div className=" w-full h-full">
@@ -351,7 +354,7 @@ export default function Home() {
         </div> */}
         <div className="w-full h-full flex justify-center items-center flex-col gap-4"
 
-          style={{ minHeight: "calc(100vh - 4.5rem)", background: bgcolorHex() }}
+          style={{ minHeight: "calc(100vh - 4.5rem)" }}
         >
           <div className="w-content h-full text-white flex justify-center items-center flex-wrap">
             {rowArray && rowArray.map((index, d) => {

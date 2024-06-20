@@ -1,7 +1,7 @@
 :root {
     --var-main-square: 20rem;
     --var-main-square-number: 12rem;
-    --var-divider-length: 8rem;
+    --var-divider-length: 4rem;
 }
 
 
@@ -41,10 +41,10 @@
 
 
 .dividerCards {
-    width: 0.15rem;
+    width: 0.1rem;
     height: var(--var-divider-length);
     border-radius: 50%;
-    background: rgb(184, 184, 184);
+    background: rgb(140, 140, 140);
 }
 
 .horizDividerCards {
