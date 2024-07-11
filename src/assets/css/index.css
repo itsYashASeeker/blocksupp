@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
 body,
 .__next {
+    font-family: "Kode Mono", monospace;
     background: #1C1C1C;
     /* background: #006a68; */
+}
+
+input {
+    color: white;
+    background: black;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 .no-hover * {

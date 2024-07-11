@@ -1,3 +1,8 @@
 .fullbg {
     /* min-height: 100vh; */
 }
+
+input {
+    color: white;
+    background: black;
+}

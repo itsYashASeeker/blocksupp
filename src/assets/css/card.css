@@ -6,7 +6,9 @@
 
 
 .inCard {
+    position: relative;
     display: none;
+    z-index: 10000;
     /* transition: 0.3s all;
     transition-delay: 0.5s; */
 }
@@ -15,6 +17,7 @@
 .mainCard {
     width: var(--var-main-square);
     height: var(--var-main-square);
+    z-index: 5;
 }
 
 .horizDivSqaure {
@@ -27,7 +30,8 @@
     width: var(--var-main-square-number);
     height: var(--var-main-square-number);
     /* transition: 0.1s all cubic-bezier(0.165, 0.84, 0.44, 1); */
-    transition: 0.3s all ease-out;
+    transition: 0.01s all ease-out;
+    transition-delay: 0.3s;
 }
 
 
@@ -35,8 +39,8 @@
     /* background: gray; */
     transform: scale(1.05);
     border-radius: 50%;
-    transition: 0.1s border-radius ease-out;
-    transition-delay: 0.3s;
+    /* transition: 0.1s border-radius ease-out; */
+
 }
 
 
@@ -56,8 +60,13 @@
 
 .hoverCard {
     display: flex;
-    animation: openCard 0.2s normal cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: openCard 0.3s normal cubic-bezier(0.075, 0.25, 0.75, 1);
+    z-index: 10000;
     /* animation-delay: 0.5s; */
+}
+
+.openCard {
+    display: flex;
 }
 
 @keyframes openCard {
@@ -65,18 +74,19 @@
         display: none;
         opacity: 0;
         color: black;
+        z-index: 10000;
     }
 
     1% {
         display: flex;
         opacity: 0;
-        transform: scale(20);
+        transform: scale(5);
     }
 
-    99% {
+    /* 99% {
         opacity: 0.5;
-        transform: scale(1);
-    }
+        transform: scale(2);
+    } */
 
     100% {
         opacity: 1;
