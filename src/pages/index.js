@@ -473,6 +473,7 @@ export default function Home() {
       || window.localStorage.getItem('isWeb3Enabled')
     ) {
       enableWeb3();
+      // deactivateWeb3();
     }
   }, [isWeb3Enabled, admins, products])
 
@@ -497,53 +498,55 @@ export default function Home() {
 
           style={{ minHeight: "calc(100vh - 4.5rem)" }}
         >
-          <div className="w-full h-full text-white flex justify-center items-center flex-wrap overflow-y-auto overflow-x-hidden"
-            style={{ zIndex: 5 }}
-          >
-            {products && products.status == "success"
-              ?
-              <>
-                {products.data.length > 0 ?
-                  <>
-                    {products && products.data.length && rowArray && rowArray.map((index, d) => {
-                      return (
-                        <div id={`${index}-row-id`} className="w-full h-full text-white flex justify-center items-center overflow-hidden"
-                          style={{ maxWidth: "100vw", zIndex: 5 }}
-                        >
-                          {columnArray && columnArray.length > 0 && columnArray.map((index2, d2) => {
-                            return (
-                              <>
-                                {(index * numOfColumns + index2) < products.data.length ?
-                                  <UsableCard index={index * numOfColumns + index2} numc={numOfColumns} tlength={products.data.length} scrollPosition={scrollPosition}
-                                    isScrolling={isScrolling}
-                                    // setZIndexMore={setZIndexMore}
-                                    // removeZIndexMore={removeZIndexMore}
-                                    data={products.data[index * numOfColumns + index2]}
-                                    rowIndex={index}
-                                    key={index * numOfColumns + index2}
-                                    setModalOpen={setModalOpen}
-                                  />
-                                  : <></>
-                                }
-                              </>
+          {account ?
 
-                            )
-                          })}
-                        </div>
-                      )
-                    })}
-                  </>
-                  :
-                  <p className="text-red-300 font-bold text-lg">No Data</p>
-                }
-              </>
-              :
-              <>
-                <p className="animate-pulse">Loading...</p>
-              </>
-            }
+            <div className="w-full h-full text-white flex justify-center items-center flex-wrap overflow-y-auto overflow-x-hidden"
+              style={{ zIndex: 5 }}
+            >
+              {products && products.status == "success"
+                ?
+                <>
+                  {products.data.length > 0 ?
+                    <>
+                      {products && products.data.length && rowArray && rowArray.map((index, d) => {
+                        return (
+                          <div id={`${index}-row-id`} className="w-full h-full text-white flex justify-center items-center overflow-hidden"
+                            style={{ maxWidth: "100vw", zIndex: 5 }}
+                          >
+                            {columnArray && columnArray.length > 0 && columnArray.map((index2, d2) => {
+                              return (
+                                <>
+                                  {(index * numOfColumns + index2) < products.data.length ?
+                                    <UsableCard index={index * numOfColumns + index2} numc={numOfColumns} tlength={products.data.length} scrollPosition={scrollPosition}
+                                      isScrolling={isScrolling}
+                                      // setZIndexMore={setZIndexMore}
+                                      // removeZIndexMore={removeZIndexMore}
+                                      data={products.data[index * numOfColumns + index2]}
+                                      rowIndex={index}
+                                      key={index * numOfColumns + index2}
+                                      setModalOpen={setModalOpen}
+                                    />
+                                    : <></>
+                                  }
+                                </>
 
-            {/* {products && products.data.length && products.data.map((product, index) => {
+                              )
+                            })}
+                          </div>
+                        )
+                      })}
+                    </>
+                    :
+                    <p className="text-red-300 font-bold text-lg">No Data</p>
+                  }
+                </>
+                :
+                <>
+                  <p className="animate-pulse">Loading...</p>
+                </>
+              }
+
+              {/* {products && products.data.length && products.data.map((product, index) => {
               return (
                 <UsableCard
                   index={index * numOfColumns + index}
@@ -558,8 +561,12 @@ export default function Home() {
               )
             })} */}
 
-          </div>
+            </div>
 
+
+            :
+            <p className="text-red-100 font-bold text-lg">Please connect your wallet</p>
+          }
         </div>
       </div>
       {modalOpen.isOpen && modalOpen.data ?
